@@ -3,11 +3,7 @@ import Foundation
 // Details: https://developer.apple.com/documentation/foundation/archives_and_serialization/encoding_and_decoding_custom_types
 
 struct GraphQlResponse : Codable {
-    let dataField: DataContainer
-    
-    enum CodingKeys : String, CodingKey {
-        case dataField = "data"
-    }
+    let data: DataContainer
 }
 
 struct DataContainer : Codable {
@@ -16,4 +12,13 @@ struct DataContainer : Codable {
 
 struct Category : Codable {
     let name: String
+    let products: [Product]
+}
+
+struct Product : Codable {
+    let name: String
+    
+    enum CodingKeys : String, CodingKey {
+        case name = "displayName"
+    }
 }

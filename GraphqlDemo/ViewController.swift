@@ -3,10 +3,10 @@ import UIKit
 // Details: http://benscheirman.com/2017/06/ultimate-guide-to-json-parsing-with-swift-4/
 class ViewController: UIViewController {
     @IBOutlet private var jsonView: UITextView!
-    @IBOutlet private var categoriesView: UITextView!
+    @IBOutlet private var productsView: UITextView!
     @IBOutlet private var goButton: UIButton!
     
-    let url = "http://localhost:8080/v1/graphql?query=%7B+categories+%7B+name+%7D+%7D"
+    let url = "http://localhost:8080/v1/graphql?query=%7B+categories+%7B+name+products+%7B+displayName+%7D+%7D+%7D"
 
     @IBAction func tappedGo(button: UIButton) {
 
@@ -20,8 +20,8 @@ class ViewController: UIViewController {
 
         // render the decoded response
         DispatchQueue.main.async {
-            let cs = decodedGraphQlResponse.dataField.categories.map { $0.name }.joined(separator: ", ")
-            self.categoriesView.text = cs
+            let ps = decodedGraphQlResponse.data.categories.flatMap { $0.products.map { $0.name } }.joined(separator: ", ")
+            self.productsView.text = ps
         }
 
         // pretty print the JSON
@@ -29,7 +29,7 @@ class ViewController: UIViewController {
         encoder.outputFormatting = .prettyPrinted
         let data = try! encoder.encode(decodedGraphQlResponse)
         let prettyJson = String(data: data, encoding: .utf8)!
-        
+
         // render the JSON
         DispatchQueue.main.async { self.jsonView.text = prettyJson }
     }
