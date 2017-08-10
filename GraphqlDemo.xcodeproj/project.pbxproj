@@ -13,7 +13,7 @@
 		E23174121F3C0AF4007245CF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E23174111F3C0AF4007245CF /* Assets.xcassets */; };
 		E23174151F3C0AF4007245CF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E23174131F3C0AF4007245CF /* LaunchScreen.storyboard */; };
 		E23174201F3C0AF4007245CF /* GraphqlDemoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E231741F1F3C0AF4007245CF /* GraphqlDemoTests.swift */; };
-		E231742B1F3C105B007245CF /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = E231742A1F3C105B007245CF /* Category.swift */; };
+		E231742B1F3C105B007245CF /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = E231742A1F3C105B007245CF /* Models.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,7 +37,7 @@
 		E231741B1F3C0AF4007245CF /* GraphqlDemoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GraphqlDemoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E231741F1F3C0AF4007245CF /* GraphqlDemoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphqlDemoTests.swift; sourceTree = "<group>"; };
 		E23174211F3C0AF4007245CF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		E231742A1F3C105B007245CF /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
+		E231742A1F3C105B007245CF /* Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,7 +85,7 @@
 				E23174111F3C0AF4007245CF /* Assets.xcassets */,
 				E23174131F3C0AF4007245CF /* LaunchScreen.storyboard */,
 				E23174161F3C0AF4007245CF /* Info.plist */,
-				E231742A1F3C105B007245CF /* Category.swift */,
+				E231742A1F3C105B007245CF /* Models.swift */,
 			);
 			path = GraphqlDemo;
 			sourceTree = "<group>";
@@ -202,7 +202,7 @@
 			files = (
 				E231740D1F3C0AF4007245CF /* ViewController.swift in Sources */,
 				E231740B1F3C0AF4007245CF /* AppDelegate.swift in Sources */,
-				E231742B1F3C105B007245CF /* Category.swift in Sources */,
+				E231742B1F3C105B007245CF /* Models.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -11,14 +11,21 @@ class ViewController: UIViewController {
     @IBAction func tappedGo(button: UIButton) {
         
         // get the response content
-        let c = try! String(contentsOf: URL(string: url)!)
-        print(c)
-        
-        // render the response
-        DispatchQueue.main.async {
-            self.textView.text = c
-        }
+        let jsonString = try! String(contentsOf: URL(string: url)!)
 
+        // let's parse the response
+        let decoder = JSONDecoder()
+        let jsonData = jsonString.data(using: .utf8)!
+        let decodedGraphQlResponse = try! decoder.decode(GraphQlResponse.self, from: jsonData)
+
+        // pretty print the JSON
+        let encoder = JSONEncoder()
+        encoder.outputFormatting = .prettyPrinted
+        let data = try! encoder.encode(decodedGraphQlResponse)
+        let prettyJson = String(data: data, encoding: .utf8)!
+        
+        // render the JSON
+        DispatchQueue.main.async { self.textView.text = prettyJson }
     }
 }
 
