@@ -16,10 +16,13 @@ class ViewController: UIViewController {
         // let's parse the response
         let decoder = JSONDecoder()
         let jsonData = jsonString.data(using: .utf8)!
-        let decodedGraphQlResponse = try! decoder.decode(GraphQlResponse.self, from: jsonData)
+        let decodedGraphQlResponse = try! decoder.decode(GraphQlResponse.self, from: jsonData) // this is typesafe!
 
         // render the decoded response
-        DispatchQueue.main.async { self.categoriesView.text = decodedGraphQlResponse }
+        DispatchQueue.main.async {
+            let cs = decodedGraphQlResponse.dataField.categories.map { $0.name }.joined(separator: ", ")
+            self.categoriesView.text = cs
+        }
 
         // pretty print the JSON
         let encoder = JSONEncoder()
