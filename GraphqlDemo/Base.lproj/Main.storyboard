@@ -26,7 +26,13 @@
                                 </connections>
                             </button>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8k3-e6-312">
-                                <rect key="frame" x="0.0" y="20" width="375" height="553"/>
+                                <rect key="frame" x="0.0" y="20" width="375" height="266.5"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g2V-py-EKm">
+                                <rect key="frame" x="0.0" y="306.5" width="375" height="266.5"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -34,18 +40,23 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="g2V-py-EKm" firstAttribute="top" secondItem="8k3-e6-312" secondAttribute="bottom" constant="20" id="5cY-W9-s9r"/>
+                            <constraint firstItem="8k3-e6-312" firstAttribute="height" secondItem="g2V-py-EKm" secondAttribute="height" id="AZd-bl-nNz"/>
                             <constraint firstItem="8k3-e6-312" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="DuF-e1-3O2"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="M1T-Za-BNh" secondAttribute="bottom" constant="44" id="G2k-4t-kif"/>
-                            <constraint firstItem="M1T-Za-BNh" firstAttribute="top" secondItem="8k3-e6-312" secondAttribute="bottom" constant="20" id="HyI-Nk-SM5"/>
                             <constraint firstItem="8k3-e6-312" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" id="Kgm-fm-spf"/>
+                            <constraint firstItem="g2V-py-EKm" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="P6c-Cj-wF6"/>
                             <constraint firstItem="M1T-Za-BNh" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="RLK-KZ-um8"/>
+                            <constraint firstItem="g2V-py-EKm" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Ylu-e3-OKX"/>
                             <constraint firstItem="8k3-e6-312" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="jtq-pV-feX"/>
+                            <constraint firstItem="M1T-Za-BNh" firstAttribute="top" secondItem="g2V-py-EKm" secondAttribute="bottom" constant="20" id="tPQ-Zw-RPH"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
+                        <outlet property="categoriesView" destination="g2V-py-EKm" id="IWp-Oe-Pqq"/>
                         <outlet property="goButton" destination="M1T-Za-BNh" id="SLO-cV-ALe"/>
-                        <outlet property="textView" destination="8k3-e6-312" id="5sy-2E-utf"/>
+                        <outlet property="jsonView" destination="8k3-e6-312" id="5sy-2E-utf"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
