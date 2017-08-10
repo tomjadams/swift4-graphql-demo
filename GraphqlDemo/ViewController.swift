@@ -20,7 +20,8 @@ class ViewController: UIViewController {
 
         // render the decoded response
         DispatchQueue.main.async {
-            let ps = decodedGraphQlResponse.data.categories.flatMap { $0.products.map { $0.name } }.joined(separator: ", ")
+            let names = decodedGraphQlResponse.data.categories.flatMap { $0.products.map { $0.name } }
+            let ps = Set(names).sorted().joined(separator: ", ")
             self.productsView.text = ps
         }
 
